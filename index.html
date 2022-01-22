@@ -4,12 +4,109 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+  <!-- <label for="">
+      Number
+<input type="number" data-value>
+
+  </label> 
+  <button type="button" data-add>add</button> 
+  <button type="button" data-reset>reset</button>
+<p class="js-output">Summary: <span></span></p> -->
 
 
-    <script src="./js/script.js"></script>
+<p><a href="#" >На главную</a></p>
+<ul class="site-nav">
+    <li class="site-nav_item"><a href="" class="site-nav_link"></a> О нас</li>
+    <li class="site-nav_item"><a href="" class="site-nav_link"></a>Портфолио</li>
+    <li class="site-nav_item"><a href="" class="site-nav_link"></a>Контакты</li>
+</ul>
+
+<button type="button" class="magic-btn js-magic-btn">Сделать магию</button>
+
+<section class="hero">
+    <h1 class="hero_title">Обо мне</h1>
+</section>
+
+<div class="js-actions">
+    <button type="button" data-action='add' class="two_btn">Создать</button>
+    <button type="button" data-action='remove' class="two_btn">Удалить</button>
+    <button type="button" data-action='edit' class="two_btn">Редактировать</button>
+</div>
+
+<div class="js-products"></div>
+
+<h3 class="title">Это заголовок</h3>
+
+    <!-- <script src="./js/script1.js" type="module"></script> -->
+    <!-- <script src="./js/script2.js" type="module"></script> -->
+    <!-- <script src="./js/script3.js" type="module"></script> -->
+    <script src="./js/script4.js" type="module"></script>
 </body>
 </html>
+
+
+
+<!-- Второй модуль перевалил за экватор и можем выделить для себя наиболее важные моменты и сделать для себя некую шпаргалку :памятка:
+Массивы являются одной из самых часто встречающихся структур данных в JS, они используются для хранения данных. Также массивы дают много возможностей для работы с данными.
+Функции позволяют повторять одно и то же действие во многих частях программы. Это как основной строительный элемент.
+Если кратко подытожить  - массивы и функции являются одной из самых основных тем и с ними часто придется встречаться в работе.
+:канцелярская_кнопка: Очень важно не забывать о том, что наши методы работы с массивами как и условия, могут что-то возвращать.
+:канцелярская_кнопка: Индексация в массиве начинается с 0.
+:канцелярская_кнопка: С помощью  свойства length  мы можем получить длину массива или строки (возвращает число), будет полезно при вычислении последнего индекса массива.
+:канцелярская_кнопка: Шпаргалка по методам массивов:
+split/join – преобразует строку в массив и обратно.
+push () – добавляет элементы в конец,
+pop() – удаляет элемент с конца,
+shift() – удаляет элемент с начала,
+unshift() – добавляет элементы в начало.
+splice(index, deleteIndex, ...arr) – начиная с индекса index, удаляет deleteIndex элементов и вставляет arr.
+slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end).
+:канцелярская_кнопка: Функция должна делать только то, что явно подразумевается её названием. И это должно быть одним действием. Если кратко и понятно: Одна функция – одно действие.
+:канцелярская_кнопка: Шпаргалка по объявления функций в JS:
+Функциональное выражение (function expression)
+const greet = function (name) {
+    return `Hello, ${name}`;
+};
+Объявление функции (function declaration)
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+Стрелочная функция (arrow function)
+const greet = who => return `Hello, ${name}!`;
+:канцелярская_кнопка: Не воспринимайте стрелочную функцию, как что-то страшное. Первое, что надо понять - это укороченный вариант написания простой функции. Есть такое выражение - "синтаксический сахар"
+:канцелярская_кнопка: Для того чтобы что-то вернуть из функции/метода или из условия, можно использовать оператор return. Так же из функции можно возвращать сразу любой типа данных, например
+return 'hello' // (вернем строку)
+  или
+return true // (вернем буль)
+ или
+return [1, 2] // (вернем массив)
+:канцелярская_кнопка:  Паттерн ранний возврат, говорит о том, что если условие внутри нашего if вернет true, то нам сразу же нужно что-то вернуть из тела этого условия, с помощью return.
+:канцелярская_кнопка:  Не забывайте что оператор = это оператор присвоения, а не сравнения
+:канцелярская_кнопка:  Несколько лайфхаков при работе с массивами
+Как быстро очистить массив
+const fruits = ['banana', 'apple', 'orange', 'watermelon', 'apple', 'orange', 'grape', 'apple'];
+fruits.length = 0;
+console.log(fruits); // вернет []
+Как объединить более двух массивов
+const fruits = ['apple', 'banana', 'orange'];
+const meat = ['poultry', 'beef', 'fish'];
+const vegetables = ['potato', 'tomato', 'cucumber'];
+const food = [...fruits, ...meat, ...vegetables];
+console.log(food); // вернет ["apple", "banana", "orange", "poultry", "beef", "fish", "potato", "tomato", "cucumber"]
+Как получить рандомное значение массива
+const fruits = [
+    'banana',
+    'apple',
+    'orange',
+    'watermelon',
+    'apple',
+    'orange',
+    'grape',
+    'apple',
+];
+const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+console.log(randomFruit); // вернет рандомный фрукт из массива -->
