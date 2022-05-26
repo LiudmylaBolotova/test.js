@@ -89,7 +89,7 @@
 // DOM
 
 
-const magicBtn = document.querySelector('.js-magic-btn');
+// const magicBtn = document.querySelector('.js-magic-btn');
 
 
 
